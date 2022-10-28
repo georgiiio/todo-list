@@ -58,3 +58,112 @@ input,button,textarea,select {
     scroll-behavior: auto !important;
   }
 }
+
+body{
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Rubik+One&subset=latin,cyrillic);
+.title {
+  font-family: 'Rubik One', sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #e66465 33%, #0D61BC 66%, #9198e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #0B2349;
+  display: table;
+  margin: 20px auto;
+}
+
+
+.todo-list{
+    width: 450px;
+    padding: 20px;
+
+    box-shadow: 0 10px 40px rgb(213, 207, 207);
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.list-head{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+
+.entered-list{
+    padding: 6px;
+    border-radius: 5px;
+    border: 1px solid rgb(141, 136, 136);
+    font-size: 16px;
+    outline: none;
+    margin-right: 10px;
+}
+
+.add-list {
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(#e66465, #9198e5);
+    outline: none;
+    color: #fff;
+
+    font-size: 16px;
+    cursor: pointer;
+    opacity: .6;
+    pointer-events: none;
+}
+
+.add-list.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.tasks{
+    width: 100%;
+    margin-top: 30px;
+}
+
+.item{
+    padding: 10px;
+    
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgb(143, 134, 134);
+
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #111;
+    letter-spacing: 1px;
+}
+
+.item.completed p{
+    text-decoration: line-through;
+    color: rgb(120, 106, 106);
+}
+
+.item-btn{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.item-btn i {
+    color: #9198e5;
+    font-size: 18px;
+}
