@@ -1,60 +1,102 @@
-/* Указываем box sizing */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+@import url(https://fonts.googleapis.com/css?family=Rubik+One&subset=latin,cyrillic);
+@import url(reset.css);
+
+body{
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-/* Убираем внутренние отступы */
-ul[class],ol[class] {
-  padding: 0;
+.title {
+  font-family: 'Rubik One', sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #e66465 33%, #0D61BC 66%, #9198e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #0B2349;
+  margin: 20px auto;
 }
 
-/* Убираем внешние отступы */
-body,h1,h2,h3,h4,p,ul[class],ol[class],li,figure,figcaption,blockquote,dl,dd {
-  margin: 0;
+.tasks{
+  width: 100%;
 }
 
-/* Выставляем основные настройки по-умолчанию для body */
-body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+/* List */
+
+.todo-list{
+  width: 450px;
+  padding: 20px;
+  box-shadow: 0 10px 40px rgb(213, 207, 207);
+  border-radius: 10px;
+  background-color: #fff;
 }
 
-/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
-ul[class],ol[class] {
-  list-style: none;
+.todo-form{
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  padding-bottom: 30px;
 }
 
-/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+.task-title{
+  padding: 6px;
+  border-radius: 5px;
+  border: 1px solid rgb(141, 136, 136);
+  font-size: 16px;
+  outline: none;
+  margin-right: 10px;
 }
 
-/* Упрощаем работу с изображениями */
-img {
-  max-width: 100%;
-  display: block;
+.add-task-title {
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(#e66465, #9198e5);
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: .6;
+  pointer-events: none;
 }
 
-/* Указываем понятную периодичность в потоке данных у article*/
-article > * + * {
-  margin-top: 1em;
+.add-task-title.active{
+  opacity: 1;
+  pointer-events: all;
 }
 
-/* Наследуем шрифты для инпутов и кнопок */
-input,button,textarea,select {
-  font: inherit;
+/* Item */
+
+.item{
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 0 rgb(143, 134, 134);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+.item p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #111;
+  letter-spacing: 1px;
+}
+
+.item.completed p{
+  text-decoration: line-through;
+  color: rgb(120, 106, 106);
+}
+
+.item-btn{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.item-btn i {
+  color: #9198e5;
+  font-size: 18px;
 }
