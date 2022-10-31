@@ -34,7 +34,7 @@ body{
   background-color: #fff;
 }
 
-.todo-from{
+.todo-form{
   display: grid;
   grid-template-columns: 4fr 1fr;
   padding-bottom: 30px;
