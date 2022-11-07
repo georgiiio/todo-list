@@ -20,11 +20,34 @@ function renderTodoItem (parentElement,todoItem){
 `
 }
 
-function onAppReady(){
+function onSubmit(event){
+  console.log(event);
+  event.preventDefault();
+  const submittedForm = event.target
+  const input = submittedForm.title
+  console.log(input.value)
+
+  todoList.push({
+    title: input.value,
+    isCompeleted: false,
+  })
+  renderTodoList();
+}
+
+function renderTodoList (){
   const taskElement = document.querySelector('#tasks');
+  taskElement.innerHTML = '';
   todoList.forEach(function(todoListItem){
     renderTodoItem(taskElement, todoListItem);
   })
 }
 
+function onAppReady(){
+  const todoForm = document.querySelector('#todo-form'); 
+  todoForm.addEventListener('submit', onSubmit);
+  renderTodoList();
+}
+
 document.addEventListener('DOMContentLoaded', onAppReady);
+
+
