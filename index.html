@@ -12,12 +12,12 @@
 <h1 class="title">To do List app</h1>
 
 <div class="todo-list">
-  <form class="todo-form">
-    <input type="text" class="task-title">
-    <button class="add-task-title">Add</button>
+  <form id="todo-form" class="todo-form">
+    <input id="task-title" type="text" name="title" class="task-title">
+    <button disabled type="submit" id="add-btn" class="add-task-title">Add</button>
   </form>
 
-  <ul id = "tasks" class="tasks">
+  <ul id="tasks" class="tasks">
   </ul>
 </div> 
 <script src="./main.js"></script>
