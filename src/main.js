@@ -73,7 +73,6 @@ function onClickTasks (event){
   }
 }
 
-
 function onAppReady() {
   intputTitle = document.querySelector('#task-title');
   todoForm = document.querySelector('#todo-form');
@@ -87,8 +86,4 @@ function onAppReady() {
   renderTodoList();
 }
 
-
-
 document.addEventListener('DOMContentLoaded', onAppReady);
-
-
