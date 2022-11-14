@@ -9,26 +9,25 @@ const concat = require('gulp-concat')
 const autoprefixer = require('gulp-autoprefixer')
 const minify = require('gulp-minify');
 const sync = require('browser-sync').create()
-
 const sass = gulpSass(dartSass)
 
 function html(){
   return src('src/**.html')
     .pipe(include({
       prefix: '@@'
-  }))
-  .pipe(htmlmin({
-    collapseWhitespace: true
-  }))
+    }))
+    .pipe(htmlmin({
+      collapseWhitespace: true
+    }))
     .pipe(dest('dist'))
 }
 
 function js(){
   return src('src/**.js')
-  .pipe(minify({
-    noSource: true
-  }))
-  .pipe(dest('dist/js'))
+    .pipe(minify({
+      noSource: true
+    }))
+    .pipe(dest('dist/js'))
 }
 
 function scss(){
@@ -40,7 +39,6 @@ function scss(){
     .pipe(csso())
     .pipe(concat('index.css'))
     .pipe(dest('dist/css'))
-
 }
 
 function clear(){
@@ -57,6 +55,6 @@ function serve(){
   watch('src/**.js', series(js)).on('chenge', sync.reload)
 }
 
-exports.build = series(clear, html, scss)
-exports.serve = series(clear, scss, html, js, serve)
+exports.build = series(clear, html, scss, js)
+exports.serve = series(clear, html, scss, js, serve)
 exports.clear = clear
